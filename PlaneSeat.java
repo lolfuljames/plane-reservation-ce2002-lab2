@@ -27,23 +27,15 @@ public class PlaneSeat{
     }
 
     public void assign(int customerID){
-        if(this.assigned){
-            System.out.println("Error! Seat is already assigned!");
-            return;
-        }
         this.assigned = true;
         this.customerID = customerID;
         System.out.println("Seat assigned!");
     }
 
     public void unassign(){
-        if(this.assigned){
-            this.customerID=0;
-            this.assigned=false;
-            System.out.println("Seat unassigned!");
-            return;
-        }
-        System.out.println("Error! Seat is already unassigned!");
+        this.customerID=0;
+        this.assigned=false;
+        System.out.println("Seat unassigned!");
     }
 
 }

@@ -56,12 +56,20 @@ public class Plane{
     }
 
     public void assignSeat(int seatID, int cust_ID){
+        if(seat[seatID-1].isOccupied()){
+            System.out.println("Error! Seat is already assigned!");
+            return;
+        }
         seat[seatID-1].assign(cust_ID);
-        if(numEmptySeat>0) numEmptySeat--; //no error checking is done due to the limitation of the question
+        numEmptySeat--; //no error checking is done due to the limitation of the question
     }
 
     public void unassignSeat(int seatID){
+        if(seat[seatID-1].isOccupied()==false){
+            System.out.println("Error! Seat is already unassigned!");
+            return;
+        }
         seat[seatID-1].unassign();
-        if(numEmptySeat<12) numEmptySeat++; //no error checking is done due to the limitation of the question
+        numEmptySeat++; //no error checking is done due to the limitation of the question
     }
 }
